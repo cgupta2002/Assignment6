@@ -2,37 +2,36 @@
 <html lang="en">
 	<head>
 	<title> Chirayu Gupta </title>
-   <link rel="shortcut icon" href="images/favicon.ico">
+   <link rel="shortcut icon" href="../images/favicon.ico">
    <!-- custom styles -->
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand"><img src='images/Logo.png' style="width:50px; height:relative;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link "  href="about.html">About Me</a>
+                <a class="nav-link "  href="{{url_for('about')}}">About Me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="resume.html">Resume</a>
+                <a class="nav-link" href="{{url_for('resume')}}">Resume</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="projects.html">Projects</a>
+                <a class="nav-link" href="{{url_for('projects')}}">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="form.html">Sample Form</a>
+                <a class="nav-link" href="{{url_for('form')}}">Sample Form</a>
               </li>
             </ul>
           </div>
@@ -52,19 +51,19 @@
           <h4> Learn More About My Work:</h4>
           <ul>
           <li class="a">
-            <a href="about.html">About Me</a>: My background, personal interests and professional goals.
+            <a href="{{url_for('about')}}">About Me</a>: My background, personal interests and professional goals.
           </li>
           <li class="a">
-            <a href="resume.html" src="dothis.js?r=591">Resume</a>: My recent professional and academic experiences and skillset. 
+            <a href="{{url_for('resume')}}" src="dothis.js?r=591">Resume</a>: My recent professional and academic experiences and skillset. 
           </li>
           <li class="a">
-            <a href="projects.html" src="dothis.js?r=591">Projects</a>: Interactive collaborative work using my technical acumen. 
+            <a href="{{url_for('projects')}}" src="dothis.js?r=591">Projects</a>: Interactive collaborative work using my technical acumen. 
           </li>
           <li class="a">
-            <a href="contact.html">Contact</a>: Reach out to me with any questions or to connect!
+            <a href="{{url_for('contact')}}">Contact</a>: Reach out to me with any questions or to connect!
           </li>
           <li class="a">
-            <a href="form.html">Sample Form</a>: A sample form for my Software and Product Development class.
+            <a href="{{url_for('form')}}">Sample Form</a>: A sample form for my Software and Product Development class.
           </li></ul>
         </div>
 

@@ -5,35 +5,34 @@
    <link rel="shortcut icon" href="images/favicon.ico">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <!-- custom styles -->
-   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand"><img src='images/Logo.png' style="width:50px; height:relative;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="about.html">About Me</a>
+                <a class="nav-link "  href="{{url_for('about')}}">About Me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="resume.html">Resume</a>
+                <a class="nav-link" href="{{url_for('resume')}}">Resume</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="projects.html">Projects</a>
+                <a class="nav-link" href="{{url_for('projects')}}">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="form.html">Sample Form</a>
+                <a class="nav-link" href="{{url_for('form')}}">Sample Form</a>
               </li>
             </ul>
           </div>
@@ -80,7 +79,6 @@
                     
                   </ul>
                 </p>
-                <img src="images/me.jpg" style="width:150px; height:150px; border-radius: 50px; margin-top: -875px;margin-left: 300px;">
 
         </div>
         <div class="col-6">
@@ -226,7 +224,7 @@
                     Student Ambassador 
                   </td>
                   <td>
-                    <img src="images/msis.png"style="width:100px; height:auto;" >
+                    Kelley School of Business, MSIS Program
                   </td>
                   <td class = 'b'>
                     September '24 - Present
@@ -240,7 +238,7 @@
                     Teaching Assistant - Information Infrastructure II  
                   </td>
                   <td>
-                    <img src="images/luddy.png"style="width:100px; height:auto;" >
+                    Luddy School of Informatics, Computing and Engineering
                   </td>
                   <td class = 'b'>
                     January '23 - December '23
@@ -254,7 +252,7 @@
                     Technology Consulting Intern - SAP 
                   </td>
                   <td>
-                    <img src="images/ey.png"style="width:100px; height:auto;" >
+                    Ernst & Young
                   </td>
                   <td class = 'b'>
                     June '23 - July '23
@@ -266,7 +264,7 @@
                         Executive Director
                       </td>
                       <td>
-                        <img src="images/gaming.png"style="width:100px; height:auto;" >
+                        Gaming @ IU
                       </td>
                       <td class = 'b'>
                         August '22 - July '23
@@ -279,7 +277,7 @@
                     Teaching Assistant - Information Infrastructure I 
                   </td>
                   <td>
-                    <img src="images/luddy.png"style="width:100px; height:auto;" >
+                    Luddy School of Informatics, Computing, and Engineering
                   </td>
                   <td class = 'b'>
                     January '22 - January '23
@@ -292,7 +290,7 @@
                     Officer of Esports
                   </td>
                   <td>
-                    <img src="images/gaming.png"style="width:100px; height:auto;" >
+                    Gaming @ IU
                   </td>
                   <td class = 'b'>
                     August '21 - August '22
@@ -304,7 +302,7 @@
                     Associate
                   </td>
                   <td>
-                    <img src="images/bookstore.png"style="width:100px; height:auto;" >
+                    IU Bookstore
                   </td>
                   <td class = 'b'>
                     November '21 - February '22
