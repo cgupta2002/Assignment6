@@ -1,46 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<title> Chirayu Gupta </title>
-   <link rel="shortcut icon" href="images/favicon.ico">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <!-- custom styles -->
-   <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link "  href="{{url_for('about')}}">About Me</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{url_for('resume')}}">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{url_for('projects')}}">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{url_for('form')}}">Sample Form</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-  </head>
-<body class="d-flex flex-column">  
+{% extends 'base.html' %}
+{% block title %} About {% endblock %}
+{% block content%} 
     <main class="container-fluid p-4">
         <div >
           <div class="row">
@@ -79,6 +39,8 @@
                     
                   </ul>
                 </p>
+                <img src="{{url_for('static', filename='images/me.jpg')}}" style="width:150px; height:150px; border-radius: 50px; margin-top: -875px;margin-left: 300px;">
+
 
         </div>
         <div class="col-6">
@@ -224,7 +186,7 @@
                     Student Ambassador 
                   </td>
                   <td>
-                    Kelley School of Business, MSIS Program
+                    <img src="{{url_for('static', filename='images/msis.png')}}"style="width:100px; height:auto;" >
                   </td>
                   <td class = 'b'>
                     September '24 - Present
@@ -233,12 +195,25 @@
                     I have worked with the MSIS program office to reach out to prospective students. By attending career fairs and hosting kiosk hours, we are able to make a more personal connection with students and help them onboard easily if they choose to join the program! 
                   </td>
                 </tr>
+                <tr >
+                  <td class = 'b'>
+                    IT Manager (Part-Time)
+                  </td>
+                  <td>
+                    <img src="{{url_for('static', filename='images/NHP.png')}}"style="width:100px; height:auto;" >
+                  </td>
+                  <td class = 'b'>
+                    June '20 - Present
+                  </td>
+                  <td class = 'b'>
+                    I set up IT functionality for seamless web service accessibility while managing software licenses for Microsoft Suite, Adobe Suite, and Sage 50 Accounting to enhance operational efficiency. Additionally, I integrated new hardware into a private cloud environment, streamlining processes and improving scalability to support the company’s evolving needs.                  </td>
+                </tr>
                 <tr>
                   <td class = 'b'>
                     Teaching Assistant - Information Infrastructure II  
                   </td>
                   <td>
-                    Luddy School of Informatics, Computing and Engineering
+                    <img src="{{url_for('static', filename='images/luddy.png')}}" style="width:100px; height:auto;" >
                   </td>
                   <td class = 'b'>
                     January '23 - December '23
@@ -252,7 +227,7 @@
                     Technology Consulting Intern - SAP 
                   </td>
                   <td>
-                    Ernst & Young
+                    <img src="{{url_for('static', filename='images/ey.png')}}" style="width:100px; height:auto;" >
                   </td>
                   <td class = 'b'>
                     June '23 - July '23
@@ -264,7 +239,7 @@
                         Executive Director
                       </td>
                       <td>
-                        Gaming @ IU
+                        <img src="{{url_for('static', filename='images/gaming.png')}}"style="width:100px; height:auto;" >
                       </td>
                       <td class = 'b'>
                         August '22 - July '23
@@ -277,7 +252,7 @@
                     Teaching Assistant - Information Infrastructure I 
                   </td>
                   <td>
-                    Luddy School of Informatics, Computing, and Engineering
+                    <img src="{{url_for('static', filename='images/luddy.png')}}"style="width:100px; height:auto;" >
                   </td>
                   <td class = 'b'>
                     January '22 - January '23
@@ -290,7 +265,7 @@
                     Officer of Esports
                   </td>
                   <td>
-                    Gaming @ IU
+                    <img src="{{url_for('static', filename='images/gaming.png')}}" style="width:100px; height:auto;" >
                   </td>
                   <td class = 'b'>
                     August '21 - August '22
@@ -302,7 +277,7 @@
                     Associate
                   </td>
                   <td>
-                    IU Bookstore
+                    <img src="{{url_for('static', filename='images/bookstore.png')}}" style="width:100px; height:auto;" >
                   </td>
                   <td class = 'b'>
                     November '21 - February '22
@@ -373,12 +348,6 @@
 
 
     </main>
-   <footer class="footer mt-auto py-3 bg-light fixed-bottom">
-    <div class="container">
-        <span class="text-muted"> <i>Chirayu Gupta &copy; 2024 </i></span>
-    </div>
-    </footer>
+{% endblock %}
 
-
-</body>
 </html>
