@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Delete Confirmation {% endblock %}
+{% block content%}
+    <main class="d-inline-flex p-5 align-items-end">
+        <div class="container p-5">
+            <form action="{{url_for('delete', title=title)}}" method="POST">
+                <h2 class="danger"> Are you sure you want to delete? THIS CANNOT BE UNDONE.</h2>
+                <div class="text-center">
+                    <br>
+                    <button class='btn btn-danger' type="submit" value="Submit">Yes</button>
+                </div>
+            </form>
+          </div>
+
+    </main>
+{% endblock %}
+
+
+</html>

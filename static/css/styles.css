@@ -73,3 +73,7 @@ input.a{
 label.a {
     height: 30px;
 }
+
+td.c {
+    text-align: left;
+}

@@ -1,32 +1,69 @@
 {% extends 'base.html' %}
 {% block title %} Projects {% endblock %}
 {% block content%}
-    <main class="d-inline-flex p-5 align-items-end">
-        <div class="container p-5"> 
+    <main class="d-inline-flex">
+      <div class="container p-5"> 
+        <br>
+        <br>
           <h1> Project Work</h1>
-          <p> Throughout my career, I have worked with many diverse groups with valuable insights. Here are some projects I have completed on these teams:
+          <p> Throughout my career, I have worked with many diverse groups with valuable insights. Here are some projects I have completed on these teams
           <br><i>Note: Many of these projects are 2-3 years old, if not more. Not all functionality remains and do not necessarily reflect my current skills.</i></p>
-          <ul>
-            <li>
-              <p><a href="https://cgi.luddy.indiana.edu/~chirgupt/I211_project.cgi"> Information Infrastructure II Final Project</a>: I created this website in late 2022 to complete the class I TA'd for a year. This website includes SQL connectivity, Python/Flask development, and basic HTML/CSS skills.  </p>
-              <img src="{{url_for('static', filename='images/i211.png')}}" style="width:500px; height:relative;">
-            </li>
-            <li>
-              <p><a href="https://chirgupt.pages.iu.edu/MSIS_Capstone_Project/index.html"> Digital Solution Design Final Project</a>: This website was a front-end prototype for our project, which was centered around building a platform for the MSIS program. This website was created solely using HTML/CSS.</p>
-              <img src="{{url_for('static', filename='images/s310.png')}}" style="width:500px; height:relative;">
-            </li>
-            <li>
-              <p> <a href="https://cgi.luddy.indiana.edu/~chirgupt/main.php">Information Representation Final Project</a>: This website was connected to a SQL database and used PHP to pass data between the website and database.</p>
-              <img src="{{url_for('static', filename='images/i308.png')}}" style="width:500px; height:relative;">
-
-            </li>
-            <li>
-              <p><a href="https://github.com/cgupta2002/K304FinalProject"> Technology and Business Analysis Final Project</a>: This script was my final project using R. I compiled data for my favorite baseball team and compared their team statistics over the past 10 years alongside the stats of the top 5 players each year.</p>
-
-            </li>
-          </ul>
-        </div>
-
+          <table style="width:100%">
+            <thead>
+              <tr>
+                <th style="width:10%">
+                  Project Name
+                </th>
+                <th style="width:10%">
+                  Company / Affiliation
+                </th>
+                <th style="width:5%">
+                  Year of Completion
+                </th>
+                <th style="width:20%">
+                  Sample Screenshot
+                </th>
+                <th style="width:50%">
+                  Product Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for project in projects %}
+              <tr>
+                <td class="c"><a href="{{project['link']}}"> {{ project['title'] }}</a></td>
+                <td>{{ project['affiliation'] }}</td>
+                <td >{{ project['timeline'] }}</td>
+                <td class="c">
+                  {% if project['imgName'] %}
+                    <img src="{{ url_for('static', filename='images/' ~ project['imgName']) }}" alt="No Image" style="width:200px;">
+                  {% else %}
+                    No image
+                  {% endif %}
+                </td>
+                <td class="c">{{ project['description'] }}</td>
+                <td style="width:2.5%">
+                  <a href="{{url_for('form', title=project['title'], status='EDIT')}}">
+                    <button class='btn btn-warning'> Edit </button>
+                  </a>
+                </td>
+                <td style="width:2.5%">
+                <a href="{{url_for('delete', title=project['title'], status='DEL-PROJECT')}}">
+                    <button class="btn btn-danger"> Delete </button>
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        <div class="text-center">
+          <br>
+          <a href="{{url_for('form', status='ADD-PROJECT')}}">
+            <button class="btn btn-primary"> Add Project</button>
+          </a>
+          
+      </div>
+    </div>
 
     </main>
 {% endblock %}
