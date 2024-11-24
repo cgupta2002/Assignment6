@@ -95,7 +95,7 @@ class Project:
     def getAllProjects(cls):
         conn = sqlite3.connect('projects.db')
         cursorObj = conn.cursor()
-        cursorObj.execute('SELECT title, description, affiliation, imgName, timeline, link FROM projects;')
+        cursorObj.execute('SELECT title, description, affiliation, imgName, timeline, link FROM projects ORDER BY timeline DESC;')
         allRows = cursorObj.fetchall()
         movieListOfDictionaries = []
         for row in allRows:

@@ -88,10 +88,5 @@ def delete():
         Project.delProject(title)        
         return redirect(url_for('projects'))
 
-
-
-
-
-
 if __name__ == '__main__':
     Project.getAllProjects()
