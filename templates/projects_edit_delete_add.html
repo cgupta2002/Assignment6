@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} Projects {% endblock %}
 {% block content%}
-    <main style='margin-top:0px;'class="d-inline-flex">
+    <main class="d-inline-flex">
       <div class="container p-5"> 
         <br>
         <br>
@@ -42,12 +42,27 @@
                   {% endif %}
                 </td>
                 <td class="c">{{ project['description'] }}</td>
-              
+                <td style="width:2.5%">
+                  <a href="{{url_for('form', title=project['title'], status='EDIT')}}">
+                    <button class='btn btn-warning'> Edit </button>
+                  </a>
+                </td>
+                <td style="width:2.5%">
+                <a href="{{url_for('delete', title=project['title'], status='DEL-PROJECT')}}">
+                    <button class="btn btn-danger"> Delete </button>
+                  </a>
+                </td>
               </tr>
               {% endfor %}
             </tbody>
           </table>
-        
+        <div class="text-center">
+          <br>
+          <a href="{{url_for('form', status='ADD-PROJECT')}}">
+            <button class="btn btn-primary"> Add Project</button>
+          </a>
+          
+      </div>
     </div>
 
     </main>

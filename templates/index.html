@@ -1,35 +1,73 @@
 {% extends 'base.html' %}
 {% block title %} Home {% endblock %}
-{% block content%}
-
-    <main class="d-inline-flex p-5 align-items-end">
-        <div class="container p-5">
-          <div> <h2> Welcome to My Portfolio!</h2></div>
-          <div>
-            <p> My name is Chirayu Gupta and I am a Graduate Student in the Master's in Information Systems (MSIS) program through the Kelley School of Business.
-            I was born and raised in the suburbs of Chicago, and I look to work in Business Intelligence after graduating. I hope to travel across the world and eventually settle down continue my mission of helping those in need. Outside of school, I am a big fan of baseball and enjoy playing video games with friends. </p>
-           </div>
-           <br>
-          <h4> Learn More About My Work:</h4>
-          <ul>
-          <li class="a">
-            <a href="{{url_for('about')}}">About Me</a>: My background, personal interests and professional goals.
-          </li>
-          <li class="a">
-            <a href="{{url_for('resume')}}" src="dothis.js?r=591">Resume</a>: My recent professional and academic experiences and skillset. 
-          </li>
-          <li class="a">
-            <a href="{{url_for('projects')}}" src="dothis.js?r=591">Projects</a>: Interactive collaborative work using my technical acumen. 
-          </li>
-          <li class="a">
-            <a href="{{url_for('contact')}}">Contact</a>: Reach out to me with any questions or to connect!
-          </li>
-          <li class="a">
-            <a href="{{url_for('form')}}">Sample Form</a>: A sample form for my Software and Product Development class.
-          </li></ul>
+{% block content %}
+<main>
+    <!-- Hero Section -->
+    <section class="text-center text-light p-3" style="background: linear-gradient(to right, #4facfe, #00ffed);">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Welcome to My Portfolio!</h1>
         </div>
+    </section>
 
-    </main>
-    {% endblock %}
+    <!-- About Section -->
+    <section class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-4">
+                <img src="/static/images/me.jpg" alt="Profile Picture" class="img-fluid rounded-circle shadow" style="max-width: 60%;">
+            </div>
+            <div class="col-lg-8">
+                <h2 class="fw-bold">Hello, I'm Chirayu Gupta!</h2>
+                <p>
+                    I am a Graduate Student in the Master's in Information Systems (MSIS) program through the Kelley School of Business.
+                    Born and raised in the suburbs of Chicago, I aspire to build a career navigating the meeting point between business and technology, explore the world, and help those in need.
+                    Outside of academics, I am a baseball enthusiast and enjoy playing video games with friends.
+                </p>
+            </div>
+        </div>
+    </section>
 
-</html>
+    <!-- Navigation Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">About Me</h5>
+                            <p class="card-text">Explore my background, personal interests, and professional goals.</p>
+                            <a href="{{url_for('about')}}" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Resume</h5>
+                            <p class="card-text">View my professional, academic, and leadership experience<p>
+                            <a href="{{url_for('resume')}}" class="btn btn-primary">View Resume</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Projects</h5>
+                            <p class="card-text">Collaborative work showcasing my technical knowledge.</p>
+                            <a href="{{url_for('projects')}}" class="btn btn-primary">Discover</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Contact</h5>
+                            <p class="card-text">Reach out with any questions or to connect!</p>
+                            <a href="{{url_for('contact')}}" class="btn btn-primary">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

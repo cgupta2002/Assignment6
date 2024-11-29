@@ -77,3 +77,12 @@ label.a {
 td.c {
     text-align: left;
 }
+
+main {
+    margin-top:75px;
+}
+
+body {
+    background-color: #f8f9fa; /* Off-white color */
+    color: #333; /* Optional: Adjust text color to ensure readability */
+  }

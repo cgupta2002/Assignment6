@@ -1,11 +1,66 @@
 {% extends 'base.html' %}
 {% block title %} Resume {% endblock %}
-{% block content%}
-    <main class="d-inline-flex p-5 align-items-end">
-        <div class="container p-5">
+{% block content %}
+<main>
+    <!-- Header Section -->
+    <section class="text-center p-3" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h1 class="display-6 fw-bold">My Resume</h1>
+            <p class="lead">Explore my professional journey, skillset, and accomplishments in detail below.</p>
+        </div>
+    </section>
 
-          <object data="{{url_for('static', filename='9-24-2024 Resume.pdf')}}" width="1000px" height="700px"> </object>
-    </main>
+    <!-- PDF and Highlights Section -->
+    <section class="container py-5">
+        <div class="row">
+            <!-- PDF Viewer -->
+            <div class="col-lg-8 mb-4">
+                <object 
+                    data="{{url_for('static', filename='9-24-2024 Resume.pdf')}}" 
+                    type="application/pdf" 
+                    width="100%" 
+                    height="600px">
+                    Your browser does not support PDFs. <a href="{{url_for('static', filename='9-24-2024 Resume.pdf')}}">Download the PDF</a>.
+                </object>
+            </div>
+
+            <!-- Professional Highlights -->
+            <div class="col-lg-4">
+                <h2 class="fw-bold text-center pb-3">Professional Highlights</h2>
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="card h-100 shadow">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Consulting Expertise</h5>
+                                <p class="card-text">
+                                    During my intership at Ernst & Young, I assisted in delivering an SAP S/4 HANA ERP solutions in the order-to-cash workstream.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card h-100 shadow">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">IT Leadership</h5>
+                                <p class="card-text">
+                                    As IT Manager at Nu-Horizon Products, I was able to apply my education to set up and expand technical capabilities as the company grew.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card h-100 shadow">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Educational Leadership</h5>
+                                <p class="card-text">
+                                    I was a teaching assistant for Information Infrastructure I and II for 3 years, earning the Informatics Teaching Assistant of the Year award in 2023.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock %}
-
-</html>

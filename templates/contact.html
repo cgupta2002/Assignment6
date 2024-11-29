@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 {% block title %} Contact Me {% endblock %}
-{% block content%}
-    <main class="d-inline-flex p-5 align-items-end">
-        <div class="container p-5">
-          <p2> Connect with Me!</p2>
-          <ul>
-            <li>
-              <a href="mailto:chirayugupta14@gmail.com"> Email</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/guptachirayu/">LinkedIn</a>
-            </li>
-            <li>
-              <a href="https://github.com/cgupta2002"> GitHub</a>
-            </li>
-          </ul>
+{% block content %}
+    <main class="container-fluid p-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h2 class="display-4">Let's Connect!</h2>
+                <p class="lead">I'm always open to new opportunities and conversations. Reach out to me through any of the channels below:</p>
+                <div class="mt-4">
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <a href="mailto:chirayugupta14@gmail.com" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://www.linkedin.com/in/guptachirayu/" class="btn btn-outline-info btn-lg">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://github.com/cgupta2002" class="btn btn-outline-dark btn-lg">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-5">
+                    <p>Feel free to connect anytime—I look forward to hearing from you!</p>
+                </div>
+            </div>
         </div>
-
-
     </main>
 {% endblock %}
 
